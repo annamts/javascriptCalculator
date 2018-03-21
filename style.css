@@ -1,0 +1,60 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 4rem 4rem 4rem 4rem;
+  background-color: #48dbfb;
+  max-width: 19rem;
+  padding: 1.5rem;
+  margin: auto;
+  margin-top: 3rem;
+  border-radius: 2rem;
+}
+
+.grid-item {
+    height: 3.5rem;
+}
+
+.screen {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: white;
+    text-align: right;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+    padding: 0.5rem;
+    height: 6rem;
+    border-radius: 1rem;
+}
+
+#current {
+    font-size: 2.5rem;
+}
+
+#historic {
+
+}
+
+button {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+
+#equal {
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.doubleH {
+    height: 6.5rem;
+}
+
+.doubleW {
+    width: 7rem;
+}

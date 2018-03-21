@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item screen" id="current">
+                0
+            </div>
+            <div class="grid-item" id="AC"><button onclick="allClear()">AC</button></div>
+            <div class="grid-item" id="CE"><button onclick="clearEntry()">CE</button></div>
+            <div class="grid-item" id="/"><button onclick="operation('divide')">/</button></div>
+            <div class="grid-item" id="*"><button onclick="operation('multiply')">x</button></div>
+            <div class="grid-item" id="7"><button onclick="getNumber(7)">7</button></div>
+            <div class="grid-item" id="8"><button onclick="getNumber(8)">8</button></div>
+            <div class="grid-item" id="9"><button onclick="getNumber(9)">9</button></div>
+            <div class="grid-item" id="-"><button onclick="operation('substract')">-</button></div>
+            <div class="grid-item" id="4"><button onclick="getNumber(4)">4</button></div>
+            <div class="grid-item" id="5"><button onclick="getNumber(5)">5</button></div>
+            <div class="grid-item" id="6"><button onclick="getNumber(6)">6</button></div>
+            <div class="grid-item" id="+"><button onclick="operation('add')">+</button></div>
+            <div class="grid-item" id="1"><button onclick="getNumber(1)">1</button></div>
+            <div class="grid-item" id="2"><button onclick="getNumber(2)">2</button></div>
+            <div class="grid-item" id="3"><button onclick="getNumber(3)">3</button></div>
+            <div class="grid-item" id ="equal"><button onclick="equal()" class="doubleH">=</button></div>
+            <div class="grid-item" id="zero"><button onclick="getNumber(0)" class="doubleW">0</button></div>
+            <div class="grid-item"><button onclick="getPoint()">.</button></div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
