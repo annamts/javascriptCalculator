@@ -78,7 +78,7 @@ function equal() {
     if (previousFunc != "operation") {
         runOperation(previousOp);
         if (accumulator === 0 && current != 0) {
-            $("#current").html(current);
+            $("#current").html(Number(current));
         } else {
             $("#current").html(accumulator);
         }
