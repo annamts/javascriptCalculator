@@ -39,6 +39,10 @@ button {
     border-radius: 1rem;
 }
 
+button:focus {
+    outline: none;
+}
+
 #equal {
     grid-row-start: 5;
     grid-row-end: 7;
