@@ -1,3 +1,7 @@
+body {
+    background-color: #535c68;
+}
+
 #calculator {
     background-color: #81ecec;
     max-width: 19rem;

@@ -95,15 +95,23 @@ function equal() {
     var current = $("#current").html();
     if (previousFunc != "operation") {
         //equal will not do anything if user just hit an operation button, as the accumulator is already in display
-        runOperation(previousOp); //run the last operation
-        if (accumulator === 0 && current != 0) {
+        if (previousOp == "none" && current != 0) {
             //if the user hadn't inputed any operation but there is currently something on the screen
             $("#current").html(Number(current)); //Number(current) in case current is something like 2.0, equal sets it to 2
         } else {
-            //in the other cases the creen displays the accumulator
+            //in the other cases, run the last operation and display the accumulator
+            runOperation(previousOp);
             $("#current").html(accumulator);
         }
     }
     previousFunc = "equal";
     previousOp = "none"; 
+}
+
+function addCommas (a) {
+    
+}
+
+function getRidOfCommas (b) {
+
 }
