@@ -16,23 +16,23 @@
                 0
             </div>
             <div class="grid-container">
-                <div class="grid-item"><button class="clear" onclick="allClear()">AC</button></div>
-                <div class="grid-item"><button class="clear" onclick="clearEntry()">CE</button></div>
-                <div class="grid-item"><button class="operator" onclick="operation('divide')">/</button></div>
-                <div class="grid-item"><button class="operator" onclick="operation('multiply')">x</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(7)">7</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(8)">8</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(9)">9</button></div>
-                <div class="grid-item"><button class="operator" onclick="operation('substract')">-</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(4)">4</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(5)">5</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(6)">6</button></div>
-                <div class="grid-item"><button class="operator" onclick="operation('add')">+</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(1)">1</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(2)">2</button></div>
-                <div class="grid-item"><button class="number" onclick="getNumber(3)">3</button></div>
-                <div class="grid-item" id="equal"><button class="equal" onclick="equal()">=</button></div>
-                <div class="grid-item" id="zero"><button class="number zero" onclick="getNumber(0)">0</button></div>
+                <div class="grid-item"><button class="clear" id="a" onclick="allClear()">AC</button></div>
+                <div class="grid-item"><button class="clear" id="e" onclick="clearEntry()">CE</button></div>
+                <div class="grid-item"><button class="operator" onclick="operation('/')">/</button></div>
+                <div class="grid-item"><button class="operator" onclick="operation('*')">x</button></div>
+                <div class="grid-item"><button class="number" id="7" onclick="getNumber(7)">7</button></div>
+                <div class="grid-item"><button class="number" id="8" onclick="getNumber(8)">8</button></div>
+                <div class="grid-item"><button class="number" id="9" onclick="getNumber(9)">9</button></div>
+                <div class="grid-item"><button class="operator" onclick="operation('-')">-</button></div>
+                <div class="grid-item"><button class="number" id="4" onclick="getNumber(4)">4</button></div>
+                <div class="grid-item"><button class="number" id="5" onclick="getNumber(5)">5</button></div>
+                <div class="grid-item"><button class="number" id="6" onclick="getNumber(6)">6</button></div>
+                <div class="grid-item"><button class="operator" onclick="operation('+')">+</button></div>
+                <div class="grid-item"><button class="number" id="1" onclick="getNumber(1)">1</button></div>
+                <div class="grid-item"><button class="number" id="2" onclick="getNumber(2)">2</button></div>
+                <div class="grid-item"><button class="number" id="3" onclick="getNumber(3)">3</button></div>
+                <div class="grid-item" id="equal"><button class="equal" id="Enter" onclick="equal()">=</button></div>
+                <div class="grid-item" id="zero"><button class="number zero" id="0" onclick="getNumber(0)">0</button></div>
                 <div class="grid-item"><button class="dot" onclick="getPoint()">.</button></div>
             </div>
         </div>
