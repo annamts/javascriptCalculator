@@ -1,3 +1,5 @@
+//Bug: número + igual = Nan
+
 var accumulator = 0;
 var previousOp = "none"; //Last operation button that was hit on the calculator
 var previousFunc = "none"; //Last function in the script that was run
@@ -97,22 +99,23 @@ function runOperation(z) {
 }
 
 function equal() {
-    var current = getRidOfCommas(document.getElementById("current"));
+    var current = getRidOfCommas($("#current").html());
     if (previousFunc != "operation") {
         //equal will not do anything if user just hit an operation button, as the accumulator is already in display
         if (previousOp == "none" && current != 0) {
             //if the user hadn't inputed any operation but there is currently something on the screen
-            $("#current").html(addCommas(Number(current))); //Number(current) in case current is something like 2.0, equal sets it to 2
+            $("#current").html(addCommas(Number(current)));
+            //Number(current) in case current is something like 2.0, equal sets it to 2
         } else {
             //in the other cases, run the last operation and display the accumulator
             runOperation(previousOp);
-            console.log(accumulator);
             //$("#current").html(accumulator);
             document.getElementById("current").innerHTML = addCommas(accumulator);
         }
     }
     previousFunc = "equal";
-    previousOp = "none"; 
+    previousOp = "none";
+
 }
 
 window.addEventListener('keydown', function(event) {
@@ -130,6 +133,10 @@ Bugs: AC no funciona quan canvies de clicar amb el botó al teclat??
         case ".":
             event.preventDefault();
             getPoint();
+            break;
+        case "Enter":
+            event.preventDefault();
+            equal();
             break;
         default:
             $("#" + event.key).click(); 
