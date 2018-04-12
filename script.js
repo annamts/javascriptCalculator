@@ -1,5 +1,3 @@
-//Bug: número + igual = Nan
-
 var accumulator = 0;
 var previousOp = "none"; //Last operation button that was hit on the calculator
 var previousFunc = "none"; //Last function in the script that was run
@@ -119,9 +117,6 @@ function equal() {
 }
 
 window.addEventListener('keydown', function(event) {
-/*
-Bugs: AC no funciona quan canvies de clicar amb el botó al teclat??
-*/
     switch (event.key) {
         case "/":
         case "*":
