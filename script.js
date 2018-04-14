@@ -14,7 +14,7 @@ function getNumber(x) {
         html = x;
     } else {
         //In other cases x should be added at the end of what's on the screen
-        html = current+x; 
+        html = current+x;
     }
     $("#current").html(addCommas(html));
     previousFunc = "getNumber";
@@ -54,12 +54,12 @@ function allClear() {
     $("#current").html(0);
     accumulator = 0;
     previousOp = "none";
-    previousFunc = "allClear";
+    previousFunc = "none";
 }
 
 function operation(y) {
     //runs when user hits +, -, x or /, y is the name of the operation
-    if (previousFunc == "getNumber" || previousFunc == "getPoint" || previousFunc == "equal") {
+    if (previousFunc == "getNumber" || previousFunc == "getPoint" || previousFunc == "equal" || previousFunc == "none") {
         //if the user was just inputing number or just hit equal and wants to keep operating on the accumulator
         if (previousOp == "none") {
             //if this was the first operation the accumulator will equal the current number
