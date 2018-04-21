@@ -1,6 +1,7 @@
 var accumulator = 0;
 var previousOp = "none"; //Last operation button that was hit on the calculator
 var previousFunc = "none"; //Last function in the script that was run
+var fromKeyboard = false;
 
 function getNumber(x) {
     //is run when user hits a number button, x is the value of the number
@@ -38,6 +39,9 @@ function getPoint() {
 
 function clearEntry() {
     //runs when user hits CE
+    if (!fromKeyboard && !fromMobile()) {
+        info();
+    }
     if (previousFunc == "getNumber" || previousFunc == "getPoint") {
        //if the user was entering a number, clear the screen 
        $("#current").html(0);
@@ -46,11 +50,15 @@ function clearEntry() {
         //if the user just hit equal, CE works as AC
         allClear();
     }
+
 }
 
 function allClear() {
     //runs when user hits AC
     //clears screen, accumulator and previousOp
+    if (!fromKeyboard && !fromMobile()) {
+        info();
+    }
     $("#current").html(0);
     accumulator = 0;
     previousOp = "none";
@@ -131,10 +139,22 @@ window.addEventListener('keydown', function(event) {
             break;
         case "Enter":
             event.preventDefault();
-            equal();
+            if (document.getElementById("ok") == null) {
+                equal();
+            } else {
+                $("#ok").click();
+            }
+            break;
+        case "a":
+            fromKeyboard = true;
+            allClear();
+            break;
+        case "e":
+            fromKeyboard = true;
+            clearEntry();
             break;
         default:
-            $("#" + event.key).click(); 
+            $("#" + event.key).click();
     }
 });
 
@@ -161,4 +181,44 @@ function getRidOfCommas (b) {
         b = b.substring(0, i)+b.substring(i+1);
     }
     return b;
+}
+
+function info() {
+    $("body").prepend(
+        '<div id="info" class="popIn">' +
+                'You can push <button class="keyboard">A</button> for <button class="clear" id="acInfo">AC</button>'+
+                '<br>'+
+                'and <button class="keyboard">E</button> for <button class="clear" id="ceInfo">CE</button>.'+
+                '<br>'+
+                '<button id="ok">Ok!</button>'+
+        '</div>'
+    );
+    $("#ok").on("click", function () {
+        fromKeyboard = true;
+        $("#info").addClass("popOut");
+        setTimeout(removeInfo, 300);
+    });
+
+    
+}
+
+function removeInfo() {
+    $("#info").remove();
+}
+
+
+function fromMobile() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
 }
